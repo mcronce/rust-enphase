@@ -2,6 +2,11 @@
 name = "enphase"
 version = "0.1.0"
 edition = "2021"
+description = "An async wrapper around the Enphase APIs - both direct local access to Envoy devices, and the Enlighten cloud service"
+license = "MIT"
+repository = "https://gitlab.cronce.io/foss/rust-enphase"
+homepage = "https://docs.rs/enphase"
+authors = ["Mike Cronce <mike@quadra-tec.net>"]
 
 [dependencies]
 arcstr = "1.1.5"
@@ -28,3 +33,4 @@ uuid = { version = "1.2.2", features = ["serde"] }
 clap = { version = "4.0.29", features = ["derive"] }
 serde_json = "1.0.89"
 tokio = { version = "1.22.0", features = ["rt", "macros"] }
+
