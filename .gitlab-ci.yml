@@ -24,15 +24,6 @@ default:
     - time mv -f /usr/local/cargo/registry .cargo/
     - /usr/bin/sccache -s
 
-Make sure upstream hasn't updated:
-  stage: build
-  image: alpine
-  before_script:
-    - apk update && apk add git bash curl sed
-  script:
-    - bash generate-data.sh && git diff --exit-code
-  after_script: []
-
 Build and test Rust code:
   stage: build
   image: mcronce/rust-pgo:1.65
