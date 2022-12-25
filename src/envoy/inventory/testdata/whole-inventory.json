@@ -1,0 +1,1465 @@
+[
+  {
+    "type": "PCU",
+    "devices": [
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245440",
+        "serial_num": "121816047176",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868959",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245440",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627390225,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245444",
+        "serial_num": "121816048000",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868960",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245444",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627390481,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245450",
+        "serial_num": "121816046784",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868965",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245450",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627390737,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245453",
+        "serial_num": "121816046778",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868966",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245453",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627390993,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245457",
+        "serial_num": "121816046764",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868967",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245457",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627391249,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245461",
+        "serial_num": "121817001714",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868969",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245461",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627391505,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245470",
+        "serial_num": "121816047719",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868970",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245470",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627391761,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245473",
+        "serial_num": "121817001711",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868972",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245473",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627392017,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245477",
+        "serial_num": "121816047976",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868974",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245477",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627392273,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245481",
+        "serial_num": "121817001623",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868975",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245481",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627392529,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245490",
+        "serial_num": "121816047175",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868977",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245490",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627392785,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245494",
+        "serial_num": "121920031157",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868979",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245494",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627393041,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245498",
+        "serial_num": "121816046753",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868980",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245498",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627393297,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245501",
+        "serial_num": "121817003959",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868981",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245501",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627393553,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245511",
+        "serial_num": "121920031546",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868985",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245511",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627393809,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245514",
+        "serial_num": "121920026237",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868986",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245514",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627394065,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245518",
+        "serial_num": "121817002916",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868988",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245518",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627394321,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245522",
+        "serial_num": "121817003144",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868990",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245522",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627394577,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245531",
+        "serial_num": "121816048068",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868991",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245531",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627394833,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245535",
+        "serial_num": "121816046807",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868992",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245535",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627395089,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245538",
+        "serial_num": "121817004060",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868994",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245538",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627395345,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245542",
+        "serial_num": "121817001712",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868995",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245542",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627395601,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": false,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245551",
+        "serial_num": "121816047734",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868998",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245551",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627395857,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245555",
+        "serial_num": "121817001633",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869000",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245555",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627396113,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": false,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245559",
+        "serial_num": "121817001630",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869001",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245559",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627396369,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245562",
+        "serial_num": "121817002800",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869002",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245562",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627396625,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245571",
+        "serial_num": "121816047915",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869005",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245571",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627396881,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245574",
+        "serial_num": "121920022605",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869006",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245574",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627397137,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245578",
+        "serial_num": "121816046806",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869007",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245578",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627397393,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245582",
+        "serial_num": "121910018047",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869010",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245582",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627397649,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245591",
+        "serial_num": "121920025190",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869011",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245591",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627397905,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245595",
+        "serial_num": "121817002851",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869012",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245595",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627398161,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245598",
+        "serial_num": "121817003024",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869014",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245598",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627398417,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245602",
+        "serial_num": "121816048381",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869015",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245602",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627398673,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245611",
+        "serial_num": "121816046785",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869016",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245611",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627398929,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245615",
+        "serial_num": "121910015404",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869018",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245615",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627399185,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245619",
+        "serial_num": "121817001639",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869019",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245619",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627399441,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245623",
+        "serial_num": "121816047963",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869021",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245623",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627399697,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245632",
+        "serial_num": "121817003003",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869023",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245632",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627399953,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245635",
+        "serial_num": "121816047720",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868722",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245635",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627400209,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245640",
+        "serial_num": "121816048380",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869026",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245640",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627400465,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245643",
+        "serial_num": "121910015401",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869028",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245643",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627400721,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245652",
+        "serial_num": "121920026238",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869029",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245652",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627400977,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245656",
+        "serial_num": "121816046761",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869031",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245656",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627401233,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245659",
+        "serial_num": "121920031398",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869033",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245659",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627401489,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245663",
+        "serial_num": "121816048190",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869034",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245663",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627401745,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245672",
+        "serial_num": "121817001635",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869034",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245672",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627402001,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245676",
+        "serial_num": "121817002854",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869039",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245676",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627402257,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": false,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245681",
+        "serial_num": "121910017310",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869040",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245681",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627402513,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00625-r02",
+        "installed": "1571245684",
+        "serial_num": "121920031015",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869041",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245684",
+        "img_load_date": "1643905064",
+        "img_pnum_running": "520-00095-r01-v04.28.07",
+        "ptpn": "540-00142-r01-v04.28.03",
+        "chaneid": 1627402769,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245694",
+        "serial_num": "121816046757",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869043",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245694",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627403025,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571245697",
+        "serial_num": "121817003195",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670868740",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571245697",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627403281,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571248628",
+        "serial_num": "121817001629",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869046",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571248628",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627403537,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571248632",
+        "serial_num": "121816046693",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869047",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571248632",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627403793,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571248637",
+        "serial_num": "121817003118",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869049",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571248637",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627404049,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571248639",
+        "serial_num": "121817002899",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869051",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571248639",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627404305,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571248648",
+        "serial_num": "121816046692",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869052",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571248648",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627404561,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      },
+      {
+        "part_num": "800-00661-r08",
+        "installed": "1571248653",
+        "serial_num": "121816046696",
+        "device_status": [
+          "envoy.global.ok"
+        ],
+        "last_rpt_date": "1670869054",
+        "admin_state": 1,
+        "dev_type": 1,
+        "created_date": "1571248653",
+        "img_load_date": "1575566582",
+        "img_pnum_running": "520-00071-r01-v02.14.02",
+        "ptpn": "540-00131-r01-v02.14.04",
+        "chaneid": 1627404817,
+        "device_control": [
+          {
+            "gficlearset": false
+          }
+        ],
+        "producing": true,
+        "communicating": true,
+        "provisioned": true,
+        "operating": false
+      }
+    ]
+  },
+  {
+    "type": "ACB",
+    "devices": []
+  },
+  {
+    "type": "NSRB",
+    "devices": []
+  }
+]

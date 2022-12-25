@@ -1,0 +1,25 @@
+{
+  "part_num": "800-00661-r08",
+  "installed": "1571245440",
+  "serial_num": "121816047176",
+  "device_status": [
+    "envoy.global.ok"
+  ],
+  "last_rpt_date": "1670868959",
+  "admin_state": 1,
+  "dev_type": 1,
+  "created_date": "1571245440",
+  "img_load_date": "1575566582",
+  "img_pnum_running": "520-00071-r01-v02.14.02",
+  "ptpn": "540-00131-r01-v02.14.04",
+  "chaneid": 1627390225,
+  "device_control": [
+    {
+      "gficlearset": false
+    }
+  ],
+  "producing": true,
+  "communicating": true,
+  "provisioned": true,
+  "operating": false
+}

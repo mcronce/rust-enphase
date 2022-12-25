@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<envoy_info>
+  <time>1670878465</time>
+  <device>
+    <sn>121915008901</sn>
+    <pn>800-00555-r03</pn>
+    <software>D5.0.49</software>
+    <euaid>4c8675</euaid>
+    <seqnum>0</seqnum>
+    <apiver>1</apiver>
+    <imeter>true</imeter>
+  </device>
+  <package name='rootfs'>
+    <pn>500-00001-r01</pn>
+    <version>02.00.00</version>
+    <build>950</build>
+  </package>
+  <package name='kernel'>
+    <pn>500-00011-r01</pn>
+    <version>04.01.15</version>
+    <build>8f3564</build>
+  </package>
+  <package name='boot'>
+    <pn>590-00018-r01</pn>
+    <version>02.00.01</version>
+    <build>426697</build>
+  </package>
+  <package name='app'>
+    <pn>500-00002-r01</pn>
+    <version>05.00.49</version>
+    <build>77afa8</build>
+  </package>
+  <package name='devimg'>
+    <pn>500-00004-r01</pn>
+    <version>01.02.245</version>
+    <build>1d5ba3</build>
+  </package>
+  <package name='geo'>
+    <pn>500-00008-r01</pn>
+    <version>02.01.22</version>
+    <build>2faa48</build>
+  </package>
+  <package name='backbone'>
+    <pn>500-00010-r01</pn>
+    <version>05.00.02</version>
+    <build>4fe435</build>
+  </package>
+  <package name='meter'>
+    <pn>500-00013-r01</pn>
+    <version>03.02.07</version>
+    <build>276642</build>
+  </package>
+  <package name='agf'>
+    <pn>500-00012-r01</pn>
+    <version>02.02.00</version>
+    <build>771104</build>
+  </package>
+  <package name='security'>
+    <pn>500-00016-r01</pn>
+    <version>02.00.00</version>
+    <build>54a6dc</build>
+  </package>
+  <package name='full'>
+    <pn>500-00001-r01</pn>
+    <version>02.00.00</version>
+    <build>950</build>
+  </package>
+  <build_info>
+    <build_id>release-5.0.x-88-Mar-19-20-02:43:57</build_id>
+    <build_time_gmt>1584611077</build_time_gmt>
+  </build_info>
+</envoy_info>

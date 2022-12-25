@@ -1,0 +1,408 @@
+[
+  {
+    "serialNumber": "121817002899",
+    "lastReportDate": 1671053142,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 245
+  },
+  {
+    "serialNumber": "121817001633",
+    "lastReportDate": 1671053393,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 248
+  },
+  {
+    "serialNumber": "121816046692",
+    "lastReportDate": 1671053554,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 248
+  },
+  {
+    "serialNumber": "121817001712",
+    "lastReportDate": 1671053485,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 249
+  },
+  {
+    "serialNumber": "121920031398",
+    "lastReportDate": 1671053528,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 281
+  },
+  {
+    "serialNumber": "121817003118",
+    "lastReportDate": 1671053441,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 248
+  },
+  {
+    "serialNumber": "121817001635",
+    "lastReportDate": 1671053128,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 245
+  },
+  {
+    "serialNumber": "121817001629",
+    "lastReportDate": 1671053439,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 245
+  },
+  {
+    "serialNumber": "121817003195",
+    "lastReportDate": 1671053436,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 242
+  },
+  {
+    "serialNumber": "121816046757",
+    "lastReportDate": 1671053813,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 239
+  },
+  {
+    "serialNumber": "121817002854",
+    "lastReportDate": 1671053673,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 238
+  },
+  {
+    "serialNumber": "121910017310",
+    "lastReportDate": 1671053431,
+    "devType": 1,
+    "lastReportWatts": 1,
+    "maxReportWatts": 282
+  },
+  {
+    "serialNumber": "121816046784",
+    "lastReportDate": 1671053569,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 262
+  },
+  {
+    "serialNumber": "121816047719",
+    "lastReportDate": 1671053458,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 253
+  },
+  {
+    "serialNumber": "121816046778",
+    "lastReportDate": 1671053453,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 256
+  },
+  {
+    "serialNumber": "121817001711",
+    "lastReportDate": 1671053369,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 253
+  },
+  {
+    "serialNumber": "121920031157",
+    "lastReportDate": 1671053468,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 289
+  },
+  {
+    "serialNumber": "121817001623",
+    "lastReportDate": 1671053465,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 239
+  },
+  {
+    "serialNumber": "121817002916",
+    "lastReportDate": 1671053476,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 236
+  },
+  {
+    "serialNumber": "121817004060",
+    "lastReportDate": 1671053389,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 256
+  },
+  {
+    "serialNumber": "121817001630",
+    "lastReportDate": 1671053489,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 238
+  },
+  {
+    "serialNumber": "121817002800",
+    "lastReportDate": 1671053492,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 233
+  },
+  {
+    "serialNumber": "121910018047",
+    "lastReportDate": 1671053500,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 232
+  },
+  {
+    "serialNumber": "121816048381",
+    "lastReportDate": 1671053506,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 239
+  },
+  {
+    "serialNumber": "121816047963",
+    "lastReportDate": 1671053115,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 245
+  },
+  {
+    "serialNumber": "121910015401",
+    "lastReportDate": 1671053523,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 234
+  },
+  {
+    "serialNumber": "121816048190",
+    "lastReportDate": 1671053427,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 247
+  },
+  {
+    "serialNumber": "121920031015",
+    "lastReportDate": 1671053434,
+    "devType": 1,
+    "lastReportWatts": 1,
+    "maxReportWatts": 280
+  },
+  {
+    "serialNumber": "121816046693",
+    "lastReportDate": 1671053439,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 245
+  },
+  {
+    "serialNumber": "121816046696",
+    "lastReportDate": 1671053445,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 242
+  },
+  {
+    "serialNumber": "121816046761",
+    "lastReportDate": 1671053665,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 287
+  },
+  {
+    "serialNumber": "121920026238",
+    "lastReportDate": 1671053524,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 280
+  },
+  {
+    "serialNumber": "121816048380",
+    "lastReportDate": 1671053119,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 245
+  },
+  {
+    "serialNumber": "121816047720",
+    "lastReportDate": 1671053517,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 240
+  },
+  {
+    "serialNumber": "121817003003",
+    "lastReportDate": 1671053516,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 239
+  },
+  {
+    "serialNumber": "121817001639",
+    "lastReportDate": 1671053412,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 239
+  },
+  {
+    "serialNumber": "121910015404",
+    "lastReportDate": 1671053511,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 281
+  },
+  {
+    "serialNumber": "121816046785",
+    "lastReportDate": 1671053506,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 286
+  },
+  {
+    "serialNumber": "121817003024",
+    "lastReportDate": 1671053406,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 249
+  },
+  {
+    "serialNumber": "121817002851",
+    "lastReportDate": 1671053502,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 239
+  },
+  {
+    "serialNumber": "121920025190",
+    "lastReportDate": 1671053501,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 282
+  },
+  {
+    "serialNumber": "121816047915",
+    "lastReportDate": 1671053398,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 245
+  },
+  {
+    "serialNumber": "121816046806",
+    "lastReportDate": 1671053401,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 238
+  },
+  {
+    "serialNumber": "121920022605",
+    "lastReportDate": 1671053495,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 283
+  },
+  {
+    "serialNumber": "121816047176",
+    "lastReportDate": 1671053560,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 245
+  },
+  {
+    "serialNumber": "121816046764",
+    "lastReportDate": 1671053572,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 246
+  },
+  {
+    "serialNumber": "121816047976",
+    "lastReportDate": 1671053370,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 249
+  },
+  {
+    "serialNumber": "121920026237",
+    "lastReportDate": 1671053475,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 286
+  },
+  {
+    "serialNumber": "121817003959",
+    "lastReportDate": 1671053378,
+    "devType": 1,
+    "lastReportWatts": -3,
+    "maxReportWatts": 286
+  },
+  {
+    "serialNumber": "121817003144",
+    "lastReportDate": 1671053735,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 236
+  },
+  {
+    "serialNumber": "121816047734",
+    "lastReportDate": 1671053485,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 236
+  },
+  {
+    "serialNumber": "121816046807",
+    "lastReportDate": 1671053480,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 242
+  },
+  {
+    "serialNumber": "121816048068",
+    "lastReportDate": 1671053480,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 251
+  },
+  {
+    "serialNumber": "121816046753",
+    "lastReportDate": 1671053592,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 285
+  },
+  {
+    "serialNumber": "121816048000",
+    "lastReportDate": 1671053701,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 258
+  },
+  {
+    "serialNumber": "121817001714",
+    "lastReportDate": 1671053456,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 259
+  },
+  {
+    "serialNumber": "121816047175",
+    "lastReportDate": 1671053466,
+    "devType": 1,
+    "lastReportWatts": -4,
+    "maxReportWatts": 259
+  },
+  {
+    "serialNumber": "121920031546",
+    "lastReportDate": 1671053474,
+    "devType": 1,
+    "lastReportWatts": 0,
+    "maxReportWatts": 288
+  }
+]
