@@ -13,6 +13,25 @@ pub use inverters::*;
 mod production;
 pub use production::*;
 
+#[cfg(feature = "clap")]
+#[derive(Debug, clap::Parser)]
+pub struct Config {
+	#[clap(env = "ENVOY_URL")]
+	base_url: CompactString,
+	#[clap(env = "ENVOY_USERNAME")]
+	username: CompactString,
+	#[clap(env = "ENVOY_PASSWORD")]
+	password: CompactString
+}
+
+#[cfg(feature = "clap")]
+impl Config {
+	#[inline]
+	pub fn client(&self) -> Result<Client, url::ParseError> {
+		Client::new(&self.base_url, &self.username, &self.password)
+	}
+}
+
 pub struct Client {
 	client: reqwest::Client,
 	base_url: Url,

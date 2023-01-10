@@ -8,9 +8,13 @@ repository = "https://gitlab.cronce.io/foss/rust-enphase"
 homepage = "https://docs.rs/enphase"
 authors = ["Mike Cronce <mike@quadra-tec.net>"]
 
+[features]
+clap = ["dep:clap"]
+
 [dependencies]
 arcstr = "1.1.5"
 base64 = "0.20"
+clap = { version = "4.0.29", optional = true, features = ["derive", "env"] }
 compact_str = { version = "0.6.1", features = ["serde"] }
 diqwest = { version = "1.1.0", features = ["rustls-tls"] }
 macaddr = { version = "1.0.1", features = ["serde_std"] }

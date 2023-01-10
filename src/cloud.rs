@@ -19,6 +19,36 @@ pub use system::System;
 pub use system::SystemSummary;
 use system::ListSystemsResponse;
 
+#[cfg(feature = "clap")]
+#[derive(Debug, clap::Parser)]
+pub struct Config {
+	#[clap(env = "ENPHASE_API_KEY")]
+	api_key: String,
+	#[clap(env = "ENPHASE_CLIENT_ID")]
+	client_id: String,
+	#[clap(env = "ENPHASE_CLIENT_SECRET")]
+	client_secret: String,
+	#[clap(env = "ENPHASE_OAUTH_CODE")]
+	code: Option<String>,
+	#[clap(env = "ENPHASE_ACCESS_TOKEN")]
+	access_token: Option<String>,
+	#[clap(env = "ENPHASE_REFRESH_TOKEN")]
+	refresh_token: Option<String>
+}
+
+#[cfg(feature = "clap")]
+impl Config {
+	#[inline]
+	pub async fn client(&self) -> Result<Client, reqwest::Error> {
+		match (self.code.as_ref(), self.access_token.as_ref(), self.refresh_token.as_ref()) {
+			(Some(code), None, None) => Client::oauth(&self.api_key, self.client_id.clone(), self.client_secret.clone(), code).await,
+			(None, Some(access_token), Some(refresh_token)) => Ok(Client::preauth(&self.api_key, self.client_id.clone(), self.client_secret.clone(), access_token.to_owned(), refresh_token.to_owned())),
+			(Some(_), Some(_), Some(_)) => todo!("Error for having both code and tokens set"),
+			_ => todo!("Error for not having either code or both tokens set")
+		}
+	}
+}
+
 pub struct Client {
 	client: reqwest::Client,
 	api_key_qstr: ArcStr,
