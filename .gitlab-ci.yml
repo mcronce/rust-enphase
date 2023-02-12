@@ -35,7 +35,6 @@ Build and test Rust code:
     - cargo update
     - cargo check --all-features
     - cargo clippy --all-features --no-deps -- -D warnings
-    - cargo build --all-features
     - cargo test --all-features
     - cargo doc --all-features --no-deps
 
