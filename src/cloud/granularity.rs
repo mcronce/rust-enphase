@@ -15,9 +15,9 @@ impl fmt::Display for Granularity {
 	#[inline]
 	fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
 		match self {
-			Self::Week => write!(f, "week"),
-			Self::Day => write!(f, "day"),
-			Self::FifteenMinutes => write!(f, "15mins")
+			Self::Week => f.write_str("week"),
+			Self::Day => f.write_str("day"),
+			Self::FifteenMinutes => f.write_str("15mins")
 		}
 	}
 }
