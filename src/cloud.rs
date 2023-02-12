@@ -22,17 +22,17 @@ use system::ListSystemsResponse;
 #[cfg(feature = "clap")]
 #[derive(Debug, clap::Parser)]
 pub struct Config {
-	#[clap(env = "ENPHASE_API_KEY")]
+	#[clap(long, env = "ENPHASE_API_KEY")]
 	api_key: String,
-	#[clap(env = "ENPHASE_CLIENT_ID")]
+	#[clap(long, env = "ENPHASE_CLIENT_ID")]
 	client_id: String,
-	#[clap(env = "ENPHASE_CLIENT_SECRET")]
+	#[clap(long, env = "ENPHASE_CLIENT_SECRET")]
 	client_secret: String,
-	#[clap(env = "ENPHASE_OAUTH_CODE")]
+	#[clap(long, env = "ENPHASE_OAUTH_CODE")]
 	code: Option<String>,
-	#[clap(env = "ENPHASE_ACCESS_TOKEN")]
+	#[clap(long, env = "ENPHASE_ACCESS_TOKEN")]
 	access_token: Option<String>,
-	#[clap(env = "ENPHASE_REFRESH_TOKEN")]
+	#[clap(long, env = "ENPHASE_REFRESH_TOKEN")]
 	refresh_token: Option<String>
 }
 
