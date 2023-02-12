@@ -1,6 +1,6 @@
 [package]
 name = "enphase"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "An async wrapper around the Enphase APIs - both direct local access to Envoy devices, and the Enlighten cloud service"
 license = "MIT"
