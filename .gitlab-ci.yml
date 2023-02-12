@@ -33,11 +33,11 @@ Build and test Rust code:
         - .cargo
   script:
     - cargo update
-    - cargo check
-    - cargo clippy --no-deps -- -D warnings
-    - cargo build
-    - cargo test
-    - cargo doc --no-deps
+    - cargo check --all-features
+    - cargo clippy --all-features --no-deps -- -D warnings
+    - cargo build --all-features
+    - cargo test --all-features
+    - cargo doc --all-features --no-deps
 
 cargo publish --dry-run:
   stage: deploy-dryrun
