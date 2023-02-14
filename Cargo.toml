@@ -19,8 +19,6 @@ clap = { version = "4.0.29", optional = true, features = ["derive", "env"] }
 compact_str = { version = "0.6.1", features = ["serde"] }
 diqwest = { version = "1.1.0", features = ["rustls-tls"] }
 macaddr = { version = "1.0.1", features = ["serde_std"] }
-oauth2 = "4.3.0"
-parking_lot = "0.12.1"
 reqwest = { version = "0.11.13", default-features = false, features = ["rustls-tls", "json", "gzip"] }
 serde = { version = "1.0.148", features = ["derive"] }
 serde-xml-rs = "0.6.0"
@@ -31,7 +29,6 @@ strum = { version = "0.24.1", features = ["derive"] }
 thiserror = "1.0.37"
 tokio = { version = "1.22.0", features = ["sync"] }
 url = "2.3.1"
-uuid = { version = "1.2.2", features = ["serde"] }
 
 [dev-dependencies]
 clap = { version = "4.0.29", features = ["derive"] }
