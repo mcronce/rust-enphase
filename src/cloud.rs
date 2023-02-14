@@ -1,6 +1,7 @@
 use std::sync::Arc;
 
 use arcstr::ArcStr;
+use base64::engine::Engine;
 use serde::Deserialize;
 use serde::Serialize;
 use tokio::sync::Mutex;
@@ -142,7 +143,7 @@ impl Client {
 
 	#[inline]
 	fn token_auth_header(client_id: &str, client_secret: &str) -> ArcStr {
-		format!("Basic {}", base64::encode(format!("{client_id}:{client_secret}"))).into()
+		format!("Basic {}", base64::engine::general_purpose::STANDARD.encode(format!("{client_id}:{client_secret}"))).into()
 	}
 }
 
