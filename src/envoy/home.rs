@@ -1,18 +1,19 @@
 use std::net::IpAddr;
 
+use chrono::serde::ts_seconds;
+use chrono::DateTime;
+use chrono::Utc;
 use compact_str::CompactString;
 use macaddr::MacAddr6;
 use serde::Deserialize;
 use serde_with::serde_as;
 use serde_with::DisplayFromStr;
-use serde_with::TimestampSeconds;
-use time::OffsetDateTime;
 
 #[serde_as]
 #[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
 pub struct Home {
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub software_build_epoch: OffsetDateTime,
+	#[serde(with = "ts_seconds")]
+	pub software_build_epoch: DateTime<Utc>,
 	pub is_nonvoy: bool,
 	pub db_size: CompactString,
 	#[serde_as(as = "DisplayFromStr")]
@@ -32,8 +33,8 @@ pub struct Home {
 pub struct Network {
 	pub web_comm: bool,
 	pub ever_reported_to_enlighten: bool,
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub last_enlighten_report_time: OffsetDateTime,
+	#[serde(with = "ts_seconds")]
+	pub last_enlighten_report_time: DateTime<Utc>,
 	pub primary_interface: CompactString,
 	pub interfaces: Vec<Interface>
 }
@@ -79,6 +80,7 @@ pub struct WiFiInterface {
 
 #[cfg(test)]
 mod tests {
+	use chrono::TimeZone;
 	use super::*;
 
 	#[test]
@@ -86,7 +88,7 @@ mod tests {
 		let s = include_str!("home/testdata/home.json");
 		let home: Home = serde_json::from_str(s).unwrap();
 		assert_eq!(home, Home{
-			software_build_epoch: OffsetDateTime::from_unix_timestamp(1584607493).unwrap(),
+			software_build_epoch: Utc.timestamp_opt(1584607493, 0).unwrap(),
 			is_nonvoy: false,
 			db_size: "43 MB".into(),
 			db_percent_full: 11,
@@ -96,7 +98,7 @@ mod tests {
 			network: Network{
 				web_comm: true,
 				ever_reported_to_enlighten: true,
-				last_enlighten_report_time: OffsetDateTime::from_unix_timestamp(1670873269).unwrap(),
+				last_enlighten_report_time: Utc.timestamp_opt(1670873269, 0).unwrap(),
 				primary_interface: "none".into(),
 				interfaces: vec![
 					Interface::Wired(WiredInterface{

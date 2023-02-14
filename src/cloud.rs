@@ -169,8 +169,8 @@ pub struct Tokens {
 
 #[cfg(test)]
 mod test {
+	use chrono::NaiveDate;
 	use std::env;
-	use time::macros::date;
 	use super::*;
 
 	#[allow(dead_code)]
@@ -241,7 +241,7 @@ mod test {
 	async fn test_preauth_system_get_microinverter_production() {
 		let client = client_preauth();
 		let system = client.list_systems().await.unwrap().pop().unwrap();
-		system.get_microinverter_production(&date!(2022-12-23), None).await.unwrap();
+		system.get_microinverter_production(&NaiveDate::from_ymd_opt(2022, 12, 23).unwrap(), None).await.unwrap();
 	}
 
 	#[tokio::test]
@@ -255,7 +255,7 @@ mod test {
 		client.refresh().await.unwrap();
 		system.get_lifetime_production(None, None, false).await.unwrap();
 		client.refresh().await.unwrap();
-		system.get_microinverter_production(&date!(2021-12-25), None).await.unwrap();
+		system.get_microinverter_production(&NaiveDate::from_ymd_opt(2021, 12, 25).unwrap(), None).await.unwrap();
 	}
 }
 

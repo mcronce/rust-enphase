@@ -1,10 +1,10 @@
+use chrono::serde::ts_seconds;
+use chrono::DateTime;
+use chrono::Utc;
 use serde::Deserialize;
 use serde::Deserializer;
-use serde_with::serde_as;
 use serde_with::DeserializeFromStr;
-use serde_with::TimestampSeconds;
 use strum::EnumString;
-use time::OffsetDateTime;
 
 mod ir;
 
@@ -74,26 +74,24 @@ impl<'de> Deserialize<'de> for Consumption {
 	}
 }
 
-#[serde_as]
 #[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Summary {
 	pub active_count: u16,
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub reading_time: OffsetDateTime,
+	#[serde(with = "ts_seconds")]
+	pub reading_time: DateTime<Utc>,
 	#[serde(rename = "wNow")]
 	pub watts_now: u32,
 	#[serde(rename = "whLifetime")]
 	pub watt_hours_lifetime: u64
 }
 
-#[serde_as]
 #[derive(Clone, Debug, PartialEq, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Detail {
 	pub active_count: u16,
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub reading_time: OffsetDateTime,
+	#[serde(with = "ts_seconds")]
+	pub reading_time: DateTime<Utc>,
 	#[serde(rename = "wNow")]
 	pub watts_now: f32,
 	#[serde(rename = "whToday")]
@@ -119,7 +117,6 @@ pub struct Detail {
 	pub lines: Vec<Line>
 }
 
-#[serde_as]
 #[derive(Clone, Debug, PartialEq, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Line {
@@ -147,15 +144,14 @@ pub struct Line {
 	pub power_factor: f32
 }
 
-#[serde_as]
 #[derive(Clone, Debug, PartialEq, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Storage {
 	#[serde(rename = "type")]
 	pub kind: StorageType,
 	pub active_count: u16,
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub reading_time: OffsetDateTime,
+	#[serde(with = "ts_seconds")]
+	pub reading_time: DateTime<Utc>,
 	#[serde(rename = "wNow")]
 	pub watts_now: f32,
 	#[serde(rename = "whNow")]
@@ -177,6 +173,7 @@ pub enum StorageState {
 
 #[cfg(test)]
 mod tests {
+	use chrono::TimeZone;
 	use super::*;
 
 	#[test]
@@ -187,13 +184,13 @@ mod tests {
 			production: Production{
 				summary: Summary{
 					active_count: 58,
-					reading_time: OffsetDateTime::from_unix_timestamp(1670878991).unwrap(),
+					reading_time: Utc.timestamp_opt(1670878991, 0).unwrap(),
 					watts_now: 164,
 					watt_hours_lifetime: 57341389
 				},
 				detail: Detail{ // {{{
 					active_count: 0,
-					reading_time: OffsetDateTime::from_unix_timestamp(1670879008).unwrap(),
+					reading_time: Utc.timestamp_opt(1670879008, 0).unwrap(),
 					watts_now: 313.472,
 					watt_hours_today: 0.0,
 					watt_hours_last_seven_days: 0.0,
@@ -250,7 +247,7 @@ mod tests {
 			consumption: Consumption{
 				total: Detail{ // {{{
 					active_count: 0,
-					reading_time: OffsetDateTime::from_unix_timestamp(1670879008).unwrap(),
+					reading_time: Utc.timestamp_opt(1670879008, 0).unwrap(),
 					watts_now: 313.472,
 					watt_hours_today: 0.0,
 					watt_hours_last_seven_days: 0.0,
@@ -305,7 +302,7 @@ mod tests {
 				/* }}} */ },
 				net: Detail{ // {{{
 					active_count: 0,
-					reading_time: OffsetDateTime::from_unix_timestamp(1670879008).unwrap(),
+					reading_time: Utc.timestamp_opt(1670879008, 0).unwrap(),
 					watts_now: 0.0,
 					watt_hours_today: 0.0,
 					watt_hours_last_seven_days: 0.0,
@@ -363,7 +360,7 @@ mod tests {
 				Storage{
 					kind: StorageType::Acb,
 					active_count: 0,
-					reading_time: OffsetDateTime::from_unix_timestamp(0).unwrap(),
+					reading_time: Utc.timestamp_opt(0, 0).unwrap(),
 					watts_now: 0.0,
 					watt_hours_now: 0.0,
 					state: StorageState::Idle
@@ -381,13 +378,13 @@ mod tests {
 			production: Production{
 				summary: Summary{
 					active_count: 58,
-					reading_time: OffsetDateTime::from_unix_timestamp(1671051033).unwrap(),
+					reading_time: Utc.timestamp_opt(1671051033, 0).unwrap(),
 					watts_now: 418,
 					watt_hours_lifetime: 57397093
 				},
 				detail: Detail{ // {{{
 					active_count: 0,
-					reading_time: OffsetDateTime::from_unix_timestamp(1671051078).unwrap(),
+					reading_time: Utc.timestamp_opt(1671051078, 0).unwrap(),
 					watts_now: 542.243,
 					watt_hours_today: 0.0,
 					watt_hours_last_seven_days: 0.0,
@@ -444,7 +441,7 @@ mod tests {
 			consumption: Consumption{
 				total: Detail{ // {{{
 					active_count: 0,
-					reading_time: OffsetDateTime::from_unix_timestamp(1671051078).unwrap(),
+					reading_time: Utc.timestamp_opt(1671051078, 0).unwrap(),
 					watts_now: 542.243,
 					watt_hours_today: 0.0,
 					watt_hours_last_seven_days: 0.0,
@@ -499,7 +496,7 @@ mod tests {
 				/* }}} */ },
 				net: Detail{ // {{{
 					active_count: 0,
-					reading_time: OffsetDateTime::from_unix_timestamp(1671051078).unwrap(),
+					reading_time: Utc.timestamp_opt(1671051078, 0).unwrap(),
 					watts_now: 0.0,
 					watt_hours_today: 0.0,
 					watt_hours_last_seven_days: 0.0,
@@ -557,7 +554,7 @@ mod tests {
 				Storage{
 					kind: StorageType::Acb,
 					active_count: 0,
-					reading_time: OffsetDateTime::from_unix_timestamp(0).unwrap(),
+					reading_time: Utc.timestamp_opt(0, 0).unwrap(),
 					watts_now: 0.0,
 					watt_hours_now: 0.0,
 					state: StorageState::Idle

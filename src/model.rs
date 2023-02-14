@@ -1,10 +1,11 @@
 use core::cmp;
 
-use time::OffsetDateTime;
+use chrono::DateTime;
+use chrono::Utc;
 
 #[derive(Clone, Debug)]
 pub struct AggregateProduction {
-	pub timestamp: OffsetDateTime,
+	pub timestamp: DateTime<Utc>,
 	pub inverters_reporting: u16,
 	pub instantaneous_power_watts: u32,
 }
@@ -13,7 +14,7 @@ impl Default for AggregateProduction {
 	#[inline]
 	fn default() -> Self {
 		Self{
-			timestamp: OffsetDateTime::from_unix_timestamp(0).unwrap(),
+			timestamp: DateTime::<Utc>::MIN_UTC,
 			inverters_reporting: 0,
 			instantaneous_power_watts: 0,
 		}

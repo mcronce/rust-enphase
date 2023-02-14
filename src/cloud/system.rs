@@ -1,22 +1,23 @@
-use core::time::Duration;
 use std::borrow::Cow;
 use std::sync::Arc;
 
 use arcstr::ArcStr;
+use chrono::serde::ts_seconds;
+use chrono::serde::ts_seconds_option;
+use chrono::DateTime;
+use chrono::Days;
+use chrono::NaiveDate;
+use chrono::NaiveTime;
+use chrono::Utc;
 use compact_str::CompactString;
 use serde::Deserialize;
 use serde_with::serde_as;
 use serde_with::TimestampSeconds;
-use time::Date;
-use time::OffsetDateTime;
-use time::Time;
 use tokio::sync::Mutex;
 
 use crate::DATE_FORMAT;
 use super::ConnectionType;
 use super::Granularity;
-
-time::serde::format_description!(parse_date, Date, "[year]-[month]-[day]");
 
 #[derive(Clone, Debug)]
 pub struct System {
@@ -30,11 +31,11 @@ pub struct System {
 	pub address: Address,
 	pub connection_type: ConnectionType,
 	pub status: CompactString,
-	pub last_report_at: OffsetDateTime,
-	pub last_energy_at: OffsetDateTime,
-	pub operational_at: OffsetDateTime,
+	pub last_report_at: DateTime<Utc>,
+	pub last_energy_at: DateTime<Utc>,
+	pub operational_at: DateTime<Utc>,
 	pub attachment_type: Option<CompactString>,
-	pub interconnect_date: Option<Date>,
+	pub interconnect_date: Option<NaiveDate>,
 	pub other_references: Vec<CompactString>,
 	pub energy_lifetime: u64,
 	pub energy_today: u32,
@@ -54,14 +55,14 @@ impl System {
 			.await
 	}
 
-	pub async fn get_lifetime_production(&self, start_date: Option<&Date>, end_date: Option<&Date>, include_split_meter_and_microinverters: bool) -> Result<Vec<(OffsetDateTime, u32)>, reqwest::Error> {
+	pub async fn get_lifetime_production(&self, start_date: Option<&NaiveDate>, end_date: Option<&NaiveDate>, include_split_meter_and_microinverters: bool) -> Result<Vec<(DateTime<Utc>, u32)>, reqwest::Error> {
 		let mut args = Vec::with_capacity(4);
 		args.push(Cow::Borrowed(self.api_key_qstr.as_ref()));
 		if let Some(date) = start_date {
-			args.push(Cow::Owned(format!("start_date={}", date.format(&DATE_FORMAT).unwrap())));
+			args.push(Cow::Owned(format!("start_date={}", date.format(DATE_FORMAT))));
 		}
 		if let Some(date) = end_date {
-			args.push(Cow::Owned(format!("end_date={}", date.format(&DATE_FORMAT).unwrap())));
+			args.push(Cow::Owned(format!("end_date={}", date.format(DATE_FORMAT))));
 		}
 		if(include_split_meter_and_microinverters) {
 			args.push(Cow::Borrowed("production=all"));
@@ -80,17 +81,17 @@ impl System {
 			.into_iter()
 			.enumerate()
 			.map(|(i, prod)| {
-				let date = start_date + Duration::from_secs(86400 * i as u64);
-				(date.with_time(Time::MIDNIGHT).assume_utc(), prod)
+				let date = start_date + Days::new(i as u64);
+				(date.and_time(NaiveTime::default()).and_local_timezone(Utc).unwrap(), prod)
 			})
 			.collect();
 		Ok(result)
 	}
 
-	pub async fn get_microinverter_production(&self, start_date: &Date, granularity: Option<Granularity>) -> Result<Vec<MicroinverterProduction>, reqwest::Error> {
+	pub async fn get_microinverter_production(&self, start_date: &NaiveDate, granularity: Option<Granularity>) -> Result<Vec<MicroinverterProduction>, reqwest::Error> {
 		let mut args = Vec::with_capacity(3);
 		args.push(Cow::Borrowed(self.api_key_qstr.as_ref()));
-		args.push(Cow::Owned(format!("start_date={}", start_date.format(&DATE_FORMAT).unwrap())));
+		args.push(Cow::Owned(format!("start_date={}", start_date.format(DATE_FORMAT))));
 		if let Some(granularity) = granularity {
 			args.push(Cow::Owned(format!("granularity={granularity}")));
 		}
@@ -140,18 +141,17 @@ pub struct SystemSummary {
 	pub current_power: u32,
 	pub energy_lifetime: u32,
 	pub energy_today: u32,
-	#[serde_as(as = "Option<TimestampSeconds<i64>>")]
-	pub last_interval_end_at: Option<OffsetDateTime>,
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub last_report_at: OffsetDateTime,
+	#[serde(with = "ts_seconds_option")]
+	pub last_interval_end_at: Option<DateTime<Utc>>,
+	#[serde(with = "ts_seconds")]
+	pub last_report_at: DateTime<Utc>,
 	pub modules: u16,
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub operational_at: OffsetDateTime,
+	#[serde(with = "ts_seconds")]
+	pub operational_at: DateTime<Utc>,
 	pub size_w: u32,
 	pub source: CompactString,
 	pub status: CompactString,
-	#[serde(with = "parse_date")]
-	pub summary_date: Date
+	pub summary_date: NaiveDate
 }
 
 #[derive(Clone, Debug, Deserialize)]
@@ -167,8 +167,7 @@ pub(crate) struct ListSystemsResponse {
 #[derive(Clone, Debug, Deserialize)]
 pub(crate) struct LifetimeProductionResponse {
 	//system_id: u32,
-	#[serde(with = "parse_date")]
-	start_date: Date,
+	start_date: NaiveDate,
 	production: Vec<u32>,
 	//meta: Metadata
 }
@@ -179,9 +178,9 @@ pub(crate) struct MicroinverterProductionResponse {
 	//granularity: Granularity,
 	//total_devices: u16,
 	//#[serde(with = "time::serde::iso8601")]
-	//start_date: OffsetDateTime,
+	//start_date: DateTime<Utc>,
 	//#[serde(with = "time::serde::iso8601")]
-	//end_date: OffsetDateTime,
+	//end_date: DateTime<Utc>,
 	//items: CompactString,
 	intervals: Vec<MicroinverterProduction>,
 	//meta: Metadata
@@ -191,7 +190,7 @@ pub(crate) struct MicroinverterProductionResponse {
 #[derive(Clone, Debug, Deserialize)]
 pub struct MicroinverterProduction {
 	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub end_at: OffsetDateTime,
+	pub end_at: DateTime<Utc>,
 	pub devices_reporting: u16,
 	#[serde(rename = "powr")]
 	pub instantaneous_power_watts: u32,
@@ -210,13 +209,13 @@ pub(crate) struct SystemResponse {
 	connection_type: ConnectionType,
 	status: CompactString,
 	#[serde_as(as = "TimestampSeconds<i64>")]
-	last_report_at: OffsetDateTime,
+	last_report_at: DateTime<Utc>,
 	#[serde_as(as = "TimestampSeconds<i64>")]
-	last_energy_at: OffsetDateTime,
+	last_energy_at: DateTime<Utc>,
 	#[serde_as(as = "TimestampSeconds<i64>")]
-	operational_at: OffsetDateTime,
+	operational_at: DateTime<Utc>,
 	attachment_type: Option<CompactString>,
-	interconnect_date: Option<Date>,
+	interconnect_date: Option<NaiveDate>,
 	other_references: Vec<CompactString>,
 	energy_lifetime: u64,
 	energy_today: u32,
@@ -228,11 +227,11 @@ pub(crate) struct SystemResponse {
 pub struct Metadata {
 	pub status: CompactString,
 	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub last_report_at: OffsetDateTime,
+	pub last_report_at: DateTime<Utc>,
 	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub last_energy_at: OffsetDateTime,
+	pub last_energy_at: DateTime<Utc>,
 	#[serde_as(as = "Option<TimestampSeconds<i64>>")]
-	pub opertional_at: Option<OffsetDateTime>
+	pub opertional_at: Option<DateTime<Utc>>
 }
 
 #[derive(Clone, Debug, Deserialize)]

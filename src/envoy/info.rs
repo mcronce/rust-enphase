@@ -1,14 +1,15 @@
+use chrono::serde::ts_seconds;
+use chrono::DateTime;
+use chrono::Utc;
 use compact_str::CompactString;
 use serde::Deserialize;
 use serde_with::serde_as;
-use serde_with::TimestampSeconds;
-use time::OffsetDateTime;
 
 #[serde_as]
 #[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
 pub struct Info {
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub time: OffsetDateTime,
+	#[serde(with = "ts_seconds")]
+	pub time: DateTime<Utc>,
 	pub device: Device,
 	#[serde(rename = "package")]
 	pub packages: Vec<Package>,
@@ -41,12 +42,13 @@ pub struct Package {
 #[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
 pub struct BuildInfo {
 	pub build_id: String,
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub build_time_gmt: OffsetDateTime
+	#[serde(with = "ts_seconds")]
+	pub build_time_gmt: DateTime<Utc>,
 }
 
 #[cfg(test)]
 mod tests {
+	use chrono::TimeZone;
 	use super::*;
 
 	#[test]
@@ -54,7 +56,7 @@ mod tests {
 		let s = include_str!("info/testdata/info.xml");
 		let info: Info = serde_xml_rs::from_str(s).unwrap();
 		assert_eq!(info, Info{
-			time: OffsetDateTime::from_unix_timestamp(1670878465).unwrap(),
+			time: Utc.timestamp_opt(1670878465, 0).unwrap(),
 			device: Device{
 				serial_number: "121915008901".into(),
 				package_number: "800-00555-r03".into(),
@@ -134,7 +136,7 @@ mod tests {
 			],
 			build_info: BuildInfo{
 				build_id: "release-5.0.x-88-Mar-19-20-02:43:57".into(),
-				build_time_gmt: OffsetDateTime::from_unix_timestamp(1584611077).unwrap()
+				build_time_gmt: Utc.timestamp_opt(1584611077, 0).unwrap()
 			}
 		});
 	}

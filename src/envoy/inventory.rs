@@ -1,3 +1,6 @@
+use chrono::serde::ts_seconds;
+use chrono::DateTime;
+use chrono::Utc;
 use compact_str::CompactString;
 use serde::Deserialize;
 use serde::Deserializer;
@@ -6,7 +9,6 @@ use serde_with::DeserializeFromStr;
 use serde_with::TimestampSeconds;
 use smallvec::SmallVec;
 use strum::EnumString;
-use time::OffsetDateTime;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct Inventory {
@@ -75,21 +77,21 @@ pub struct DeviceControl {
 pub struct Device {
 	pub part_num: CompactString,
 	#[serde_as(as = "TimestampSeconds<String>")]
-	pub installed: OffsetDateTime,
+	pub installed: DateTime<Utc>,
 	pub serial_num: CompactString,
 	pub device_status: SmallVec<[DeviceStatus; 2]>,
 	#[serde_as(as = "TimestampSeconds<String>")]
-	pub last_rpt_date: OffsetDateTime,
+	pub last_rpt_date: DateTime<Utc>,
 	pub admin_state: u8,
 	pub dev_type: u8,
 	#[serde_as(as = "TimestampSeconds<String>")]
-	pub created_date: OffsetDateTime,
+	pub created_date: DateTime<Utc>,
 	#[serde_as(as = "TimestampSeconds<String>")]
-	pub img_load_date: OffsetDateTime,
+	pub img_load_date: DateTime<Utc>,
 	pub img_pnum_running: CompactString,
 	pub ptpn: CompactString,
-	#[serde_as(as = "TimestampSeconds<i64>")]
-	pub chaneid: OffsetDateTime,
+	#[serde(with = "ts_seconds")]
+	pub chaneid: DateTime<Utc>,
 	pub device_control: SmallVec<[DeviceControl; 2]>,
 	pub producing: bool,
 	pub communicating: bool,
@@ -99,6 +101,7 @@ pub struct Device {
 
 #[cfg(test)]
 mod tests {
+	use chrono::TimeZone;
 	use smallvec::smallvec;
 	use super::*;
 
@@ -108,17 +111,17 @@ mod tests {
 		let device: Device = serde_json::from_str(s).unwrap();
 		assert_eq!(device, Device{
 			part_num: "800-00661-r08".into(),
-			installed: OffsetDateTime::from_unix_timestamp(1571245440).unwrap(),
+			installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
 			serial_num: "121816047176".into(),
 			device_status: smallvec![DeviceStatus::Ok],
-			last_rpt_date: OffsetDateTime::from_unix_timestamp(1670868959).unwrap(),
+			last_rpt_date: Utc.timestamp_opt(1670868959, 0).unwrap(),
 			admin_state: 1,
 			dev_type: 1,
-			created_date: OffsetDateTime::from_unix_timestamp(1571245440).unwrap(),
-			img_load_date: OffsetDateTime::from_unix_timestamp(1575566582).unwrap(),
+			created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
+			img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
 			img_pnum_running: "520-00071-r01-v02.14.02".into(),
 			ptpn: "540-00131-r01-v02.14.04".into(),
-			chaneid: OffsetDateTime::from_unix_timestamp(1627390225).unwrap(),
+			chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
 			device_control: smallvec![DeviceControl{gficlearset: false}],
 			producing: true,
 			communicating: true,
@@ -135,17 +138,17 @@ mod tests {
 		assert_eq!(inventory.nsrb, vec![]);
 		assert_eq!(inventory.pcu[0], Device{
 			part_num: "800-00661-r08".into(),
-			installed: OffsetDateTime::from_unix_timestamp(1571245440).unwrap(),
+			installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
 			serial_num: "121816047176".into(),
 			device_status: smallvec![DeviceStatus::Ok],
-			last_rpt_date: OffsetDateTime::from_unix_timestamp(1670868959).unwrap(),
+			last_rpt_date: Utc.timestamp_opt(1670868959, 0).unwrap(),
 			admin_state: 1,
 			dev_type: 1,
-			created_date: OffsetDateTime::from_unix_timestamp(1571245440).unwrap(),
-			img_load_date: OffsetDateTime::from_unix_timestamp(1575566582).unwrap(),
+			created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
+			img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
 			img_pnum_running: "520-00071-r01-v02.14.02".into(),
 			ptpn: "540-00131-r01-v02.14.04".into(),
-			chaneid: OffsetDateTime::from_unix_timestamp(1627390225).unwrap(),
+			chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
 			device_control: smallvec![DeviceControl{gficlearset: false}],
 			producing: true,
 			communicating: true,
@@ -162,17 +165,17 @@ mod tests {
 		assert_eq!(inventory.nsrb, vec![]);
 		assert_eq!(inventory.pcu[0], Device{
 			part_num: "800-00661-r08".into(),
-			installed: OffsetDateTime::from_unix_timestamp(1571245440).unwrap(),
+			installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
 			serial_num: "121816047176".into(),
 			device_status: smallvec![DeviceStatus::DcPowerLow, DeviceStatus::Failure],
-			last_rpt_date: OffsetDateTime::from_unix_timestamp(1671053563).unwrap(),
+			last_rpt_date: Utc.timestamp_opt(1671053563, 0).unwrap(),
 			admin_state: 1,
 			dev_type: 1,
-			created_date: OffsetDateTime::from_unix_timestamp(1571245440).unwrap(),
-			img_load_date: OffsetDateTime::from_unix_timestamp(1575566582).unwrap(),
+			created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
+			img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
 			img_pnum_running: "520-00071-r01-v02.14.02".into(),
 			ptpn: "540-00131-r01-v02.14.04".into(),
-			chaneid: OffsetDateTime::from_unix_timestamp(1627390225).unwrap(),
+			chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
 			device_control: smallvec![DeviceControl{gficlearset: false}],
 			producing: false,
 			communicating: false,
