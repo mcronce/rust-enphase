@@ -7,7 +7,7 @@ use chrono::Utc;
 pub struct AggregateProduction {
 	pub timestamp: DateTime<Utc>,
 	pub inverters_reporting: u16,
-	pub instantaneous_power_watts: u32,
+	pub instantaneous_power_watts: i32,
 }
 
 impl Default for AggregateProduction {
@@ -30,7 +30,7 @@ impl From<&[crate::envoy::Inverter]> for AggregateProduction {
 		};
 		for inverter in raw {
 			aggregate.timestamp = cmp::max(aggregate.timestamp, inverter.last_report_date);
-			aggregate.instantaneous_power_watts += inverter.last_report_watts as u32;
+			aggregate.instantaneous_power_watts += inverter.last_report_watts as i32;
 		}
 		aggregate
 	}
@@ -42,7 +42,7 @@ impl From<crate::cloud::MicroinverterProduction> for AggregateProduction {
 		Self{
 			timestamp: raw.end_at,
 			inverters_reporting: raw.devices_reporting,
-			instantaneous_power_watts: raw.instantaneous_power_watts
+			instantaneous_power_watts: raw.instantaneous_power_watts as i32
 		}
 	}
 }

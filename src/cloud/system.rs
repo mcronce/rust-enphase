@@ -193,7 +193,7 @@ pub struct MicroinverterProduction {
 	pub end_at: DateTime<Utc>,
 	pub devices_reporting: u16,
 	#[serde(rename = "powr")]
-	pub instantaneous_power_watts: u32,
+	pub instantaneous_power_watts: i32,
 	#[serde(rename = "enwh")]
 	pub energy_this_interval_wh: u32
 }
