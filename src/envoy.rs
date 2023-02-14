@@ -61,6 +61,11 @@ impl Client {
 		})
 	}
 
+	#[inline]
+	pub fn base_url(&self) -> &Url {
+		&self.base_url
+	}
+
 	pub async fn home(&self) -> Result<Home, reqwest::Error> {
 		let url = self.base_url.join("home.json").unwrap();
 		self.client.get(url).send().await?.error_for_status()?.json().await
