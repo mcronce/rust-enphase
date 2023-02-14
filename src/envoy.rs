@@ -15,20 +15,20 @@ pub use production::*;
 
 #[cfg(feature = "clap")]
 #[derive(Debug, clap::Parser)]
-pub struct Config {
-	#[clap(env = "ENVOY_URL")]
-	base_url: CompactString,
-	#[clap(env = "ENVOY_USERNAME")]
-	username: CompactString,
-	#[clap(env = "ENVOY_PASSWORD")]
-	password: CompactString
+pub struct EnvoyConfig {
+	#[clap(long, env = "ENVOY_URL")]
+	envoy_base_url: CompactString,
+	#[clap(long, env = "ENVOY_USERNAME")]
+	envoy_username: CompactString,
+	#[clap(long, env = "ENVOY_PASSWORD")]
+	envoy_password: CompactString
 }
 
 #[cfg(feature = "clap")]
-impl Config {
+impl EnvoyConfig {
 	#[inline]
 	pub fn client(&self) -> Result<Client, url::ParseError> {
-		Client::new(&self.base_url, &self.username, &self.password)
+		Client::new(&self.envoy_base_url, &self.envoy_username, &self.envoy_password)
 	}
 }
 
