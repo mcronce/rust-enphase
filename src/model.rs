@@ -42,7 +42,7 @@ impl From<crate::cloud::MicroinverterProduction> for AggregateProduction {
 		Self{
 			timestamp: raw.end_at,
 			inverters_reporting: raw.devices_reporting,
-			instantaneous_power_watts: raw.instantaneous_power_watts as i32
+			instantaneous_power_watts: raw.instantaneous_power_watts
 		}
 	}
 }
