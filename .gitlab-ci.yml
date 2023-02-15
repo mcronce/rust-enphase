@@ -15,7 +15,7 @@ default:
   before_script:
     - |
       if [ -d .cargo ]; then
-        rm -Rvf /usr/local/cargo
+        rm -Rvf /usr/local/cargo/registry
         time mv -f .cargo/registry /usr/local/cargo/ || mkdir /usr/local/cargo/registry
       fi
       rm -Rvf .cargo
