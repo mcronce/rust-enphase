@@ -74,14 +74,14 @@ impl<'de> Deserialize<'de> for Consumption {
 	}
 }
 
-#[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Summary {
 	pub active_count: u16,
 	#[serde(with = "ts_seconds")]
 	pub reading_time: DateTime<Utc>,
 	#[serde(rename = "wNow")]
-	pub watts_now: u32,
+	pub watts_now: f32,
 	#[serde(rename = "whLifetime")]
 	pub watt_hours_lifetime: u64
 }
