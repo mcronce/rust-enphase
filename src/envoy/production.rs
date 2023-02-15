@@ -185,7 +185,7 @@ mod tests {
 				summary: Summary{
 					active_count: 58,
 					reading_time: Utc.timestamp_opt(1670878991, 0).unwrap(),
-					watts_now: 164,
+					watts_now: 164.0,
 					watt_hours_lifetime: 57341389
 				},
 				detail: Detail{ // {{{
@@ -379,7 +379,7 @@ mod tests {
 				summary: Summary{
 					active_count: 58,
 					reading_time: Utc.timestamp_opt(1671051033, 0).unwrap(),
-					watts_now: 418,
+					watts_now: 418.0,
 					watt_hours_lifetime: 57397093
 				},
 				detail: Detail{ // {{{
