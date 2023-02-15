@@ -16,8 +16,9 @@ default:
     - |
       if [ -d .cargo ]; then
         rm -Rvf /usr/local/cargo
-        time mv -f .cargo /usr/local/cargo || mkdir /usr/local/cargo
+        time mv -f .cargo/registry /usr/local/cargo/ || mkdir /usr/local/cargo/registry
       fi
+      rm -Rvf .cargo
   after_script:
     - if [ -d .cargo ]; then rm -Rvf .cargo; fi
     - mkdir .cargo
