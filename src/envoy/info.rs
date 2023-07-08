@@ -10,14 +10,14 @@ use serde_with::serde_as;
 pub struct Info {
 	#[serde(with = "ts_seconds")]
 	pub time: DateTime<Utc>,
-	pub device: Device,
+	pub device: DeviceMetadata,
 	#[serde(rename = "package")]
 	pub packages: Vec<Package>,
 	pub build_info: BuildInfo
 }
 
 #[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
-pub struct Device {
+pub struct DeviceMetadata {
 	#[serde(rename = "sn")]
 	pub serial_number: CompactString,
 	#[serde(rename = "pn")]
@@ -60,7 +60,7 @@ mod tests {
 			info,
 			Info {
 				time: Utc.timestamp_opt(1670878465, 0).unwrap(),
-				device: Device {
+				device: DeviceMetadata {
 					serial_number: "121915008901".into(),
 					package_number: "800-00555-r03".into(),
 					software: "D5.0.49".into(),
