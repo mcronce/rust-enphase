@@ -37,10 +37,7 @@ impl<'de> Deserialize<'de> for Production {
 
 		let summary = summary.ok_or_else(|| serde::de::Error::custom("Missing 'inverters' production section"))?;
 		let detail = detail.ok_or_else(|| serde::de::Error::custom("Missing 'eim' production section"))?;
-		Ok(Self{
-			summary,
-			detail
-		})
+		Ok(Self { summary, detail })
 	}
 }
 
@@ -67,10 +64,7 @@ impl<'de> Deserialize<'de> for Consumption {
 
 		let total = total.ok_or_else(|| serde::de::Error::custom("Missing 'total-consumption' consumption section"))?;
 		let net = net.ok_or_else(|| serde::de::Error::custom("Missing 'net-consumption' consumption section"))?;
-		Ok(Self{
-			total,
-			net
-		})
+		Ok(Self { total, net })
 	}
 }
 
@@ -174,21 +168,24 @@ pub enum StorageState {
 #[cfg(test)]
 mod tests {
 	use chrono::TimeZone;
+
 	use super::*;
 
 	#[test]
 	fn test_deserialize_production() {
 		let s = include_str!("production/testdata/production-detail.json");
 		let stats: EnergyStats = serde_json::from_str(s).unwrap();
-		let expected = EnergyStats{ // {{{
-			production: Production{
-				summary: Summary{
+		let expected = EnergyStats {
+			// {{{
+			production: Production {
+				summary: Summary {
 					active_count: 58,
 					reading_time: Utc.timestamp_opt(1670878991, 0).unwrap(),
 					watts_now: 164.0,
 					watt_hours_lifetime: 57341389
 				},
-				detail: Detail{ // {{{
+				detail: Detail {
+					// {{{
 					active_count: 0,
 					reading_time: Utc.timestamp_opt(1670879008, 0).unwrap(),
 					watts_now: 313.472,
@@ -207,7 +204,7 @@ mod tests {
 					apparent_power: 1182.584,
 					power_factor: 0.27,
 					lines: vec![
-						Line{
+						Line {
 							watts_now: 157.389,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -224,7 +221,7 @@ mod tests {
 							apparent_power: 589.108,
 							power_factor: 0.27
 						},
-						Line{
+						Line {
 							watts_now: 156.083,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -240,12 +237,13 @@ mod tests {
 							react_power: 556.675,
 							apparent_power: 593.476,
 							power_factor: 0.27
-						}
-					]
-				/* }}} */ }
+						},
+					] /* }}} */
+				}
 			},
-			consumption: Consumption{
-				total: Detail{ // {{{
+			consumption: Consumption {
+				total: Detail {
+					// {{{
 					active_count: 0,
 					reading_time: Utc.timestamp_opt(1670879008, 0).unwrap(),
 					watts_now: 313.472,
@@ -264,7 +262,7 @@ mod tests {
 					apparent_power: 2430.089,
 					power_factor: 0.13,
 					lines: vec![
-						Line{
+						Line {
 							watts_now: 157.389,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -281,7 +279,7 @@ mod tests {
 							apparent_power: 604.808,
 							power_factor: 0.26
 						},
-						Line{
+						Line {
 							watts_now: 156.083,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -297,10 +295,11 @@ mod tests {
 							react_power: -556.675,
 							apparent_power: 610.242,
 							power_factor: 0.26
-						}
-					]
-				/* }}} */ },
-				net: Detail{ // {{{
+						},
+					] /* }}} */
+				},
+				net: Detail {
+					// {{{
 					active_count: 0,
 					reading_time: Utc.timestamp_opt(1670879008, 0).unwrap(),
 					watts_now: 0.0,
@@ -319,7 +318,7 @@ mod tests {
 					apparent_power: 32.207,
 					power_factor: 0.0,
 					lines: vec![
-						Line{
+						Line {
 							watts_now: 0.0,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -336,7 +335,7 @@ mod tests {
 							apparent_power: 15.473,
 							power_factor: 0.0
 						},
-						Line{
+						Line {
 							watts_now: 0.0,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -352,21 +351,19 @@ mod tests {
 							react_power: 0.0,
 							apparent_power: 16.734,
 							power_factor: 0.0
-						}
-					]
-				/* }}} */ }
-			},
-			storage: vec![
-				Storage{
-					kind: StorageType::Acb,
-					active_count: 0,
-					reading_time: Utc.timestamp_opt(0, 0).unwrap(),
-					watts_now: 0.0,
-					watt_hours_now: 0.0,
-					state: StorageState::Idle
+						},
+					] /* }}} */
 				}
-			]
-		/* }}} */ };
+			},
+			storage: vec![Storage {
+				kind: StorageType::Acb,
+				active_count: 0,
+				reading_time: Utc.timestamp_opt(0, 0).unwrap(),
+				watts_now: 0.0,
+				watt_hours_now: 0.0,
+				state: StorageState::Idle
+			}] /* }}} */
+		};
 		assert_eq!(stats, expected);
 	}
 
@@ -374,15 +371,17 @@ mod tests {
 	fn test_deserialize_production_2() {
 		let s = include_str!("production/testdata/production-detail-2.json");
 		let stats: EnergyStats = serde_json::from_str(s).unwrap();
-		let expected = EnergyStats{ // {{{
-			production: Production{
-				summary: Summary{
+		let expected = EnergyStats {
+			// {{{
+			production: Production {
+				summary: Summary {
 					active_count: 58,
 					reading_time: Utc.timestamp_opt(1671051033, 0).unwrap(),
 					watts_now: 418.0,
 					watt_hours_lifetime: 57397093
 				},
-				detail: Detail{ // {{{
+				detail: Detail {
+					// {{{
 					active_count: 0,
 					reading_time: Utc.timestamp_opt(1671051078, 0).unwrap(),
 					watts_now: 542.243,
@@ -401,7 +400,7 @@ mod tests {
 					apparent_power: 1272.086,
 					power_factor: 0.39,
 					lines: vec![
-						Line{
+						Line {
 							watts_now: 270.825,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -418,7 +417,7 @@ mod tests {
 							apparent_power: 634.117,
 							power_factor: 0.39
 						},
-						Line{
+						Line {
 							watts_now: 271.418,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -434,12 +433,13 @@ mod tests {
 							react_power: 551.571,
 							apparent_power: 637.969,
 							power_factor: 0.4
-						}
-					]
-				/* }}} */ }
+						},
+					] /* }}} */
+				}
 			},
-			consumption: Consumption{
-				total: Detail{ // {{{
+			consumption: Consumption {
+				total: Detail {
+					// {{{
 					active_count: 0,
 					reading_time: Utc.timestamp_opt(1671051078, 0).unwrap(),
 					watts_now: 542.243,
@@ -458,7 +458,7 @@ mod tests {
 					apparent_power: 2608.199,
 					power_factor: 0.21,
 					lines: vec![
-						Line{
+						Line {
 							watts_now: 270.825,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -475,7 +475,7 @@ mod tests {
 							apparent_power: 649.662,
 							power_factor: 0.42
 						},
-						Line{
+						Line {
 							watts_now: 271.418,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -491,10 +491,11 @@ mod tests {
 							react_power: -551.571,
 							apparent_power: 654.441,
 							power_factor: 0.41
-						}
-					]
-				/* }}} */ },
-				net: Detail{ // {{{
+						},
+					] /* }}} */
+				},
+				net: Detail {
+					// {{{
 					active_count: 0,
 					reading_time: Utc.timestamp_opt(1671051078, 0).unwrap(),
 					watts_now: 0.0,
@@ -513,7 +514,7 @@ mod tests {
 					apparent_power: 32.074,
 					power_factor: 0.0,
 					lines: vec![
-						Line{
+						Line {
 							watts_now: 0.0,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -530,7 +531,7 @@ mod tests {
 							apparent_power: 15.654,
 							power_factor: 0.0
 						},
-						Line{
+						Line {
 							watts_now: 0.0,
 							watt_hours_today: 0.0,
 							watt_hours_last_seven_days: 0.0,
@@ -546,22 +547,19 @@ mod tests {
 							react_power: 0.0,
 							apparent_power: 16.42,
 							power_factor: 0.0
-						}
-					]
-				/* }}} */ }
-			},
-			storage: vec![
-				Storage{
-					kind: StorageType::Acb,
-					active_count: 0,
-					reading_time: Utc.timestamp_opt(0, 0).unwrap(),
-					watts_now: 0.0,
-					watt_hours_now: 0.0,
-					state: StorageState::Idle
+						},
+					] /* }}} */
 				}
-			]
-		/* }}} */ };
+			},
+			storage: vec![Storage {
+				kind: StorageType::Acb,
+				active_count: 0,
+				reading_time: Utc.timestamp_opt(0, 0).unwrap(),
+				watts_now: 0.0,
+				watt_hours_now: 0.0,
+				state: StorageState::Idle
+			}] /* }}} */
+		};
 		assert_eq!(stats, expected);
 	}
 }
-

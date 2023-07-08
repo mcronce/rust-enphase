@@ -14,11 +14,11 @@ pub use granularity::Granularity;
 pub use granularity::InvalidGranularity;
 mod system;
 pub use system::Address;
+use system::ListSystemsResponse;
 pub use system::Metadata;
 pub use system::MicroinverterProduction;
 pub use system::System;
 pub use system::SystemSummary;
-use system::ListSystemsResponse;
 
 #[cfg(feature = "clap")]
 #[derive(Debug, clap::Parser)]
@@ -66,16 +66,9 @@ impl Client {
 		let client = reqwest::Client::new();
 		let url = format!("https://api.enphaseenergy.com/oauth/token?grant_type=authorization_code&redirect_uri=https://api.enphaseenergy.com/oauth/redirect_uri&code={code}");
 		let token_auth_header = Self::token_auth_header(&client_id, &client_secret);
-		let response: AuthResponse = client
-			.post(url)
-			.header("Authorization", &*token_auth_header)
-			.send()
-			.await?
-			.error_for_status()?
-			.json()
-			.await?;
+		let response: AuthResponse = client.post(url).header("Authorization", &*token_auth_header).send().await?.error_for_status()?.json().await?;
 		let auth_header = Arc::new(Mutex::new(format!("Bearer {}", &response.access_token)));
-		Ok(Self{
+		Ok(Self {
 			client,
 			api_key_qstr: format!("key={api_key}").into(),
 			//client_id,
@@ -90,7 +83,7 @@ impl Client {
 	pub fn preauth(api_key: &str, client_id: String, client_secret: String, access_token: String, refresh_token: String) -> Self {
 		let token_auth_header = Self::token_auth_header(&client_id, &client_secret);
 		let auth_header = Arc::new(Mutex::new(format!("Bearer {}", &access_token)));
-		Self{
+		Self {
 			client: reqwest::Client::new(),
 			api_key_qstr: format!("key={api_key}").into(),
 			//client_id,
@@ -103,14 +96,15 @@ impl Client {
 	}
 
 	pub fn tokens(&self) -> Tokens {
-		Tokens{
+		Tokens {
 			access: self.access_token.clone(),
 			refresh: self.refresh_token.clone()
 		}
 	}
 
 	pub async fn refresh(&mut self) -> Result<Tokens, reqwest::Error> {
-		let response: AuthResponse = self.client
+		let response: AuthResponse = self
+			.client
 			.post(format!("https://api.enphaseenergy.com/oauth/token?grant_type=refresh_token&refresh_token={}", self.refresh_token))
 			.header("Authorization", &*self.token_auth_header)
 			.send()
@@ -125,7 +119,8 @@ impl Client {
 	}
 
 	pub async fn list_systems(&self) -> Result<Vec<System>, reqwest::Error> {
-		let response: ListSystemsResponse = self.client
+		let response: ListSystemsResponse = self
+			.client
 			.get(format!("https://api.enphaseenergy.com/api/v4/systems?{}", self.api_key_qstr))
 			.header("Authorization", &*self.auth_header.lock().await)
 			.send()
@@ -151,7 +146,7 @@ impl Client {
 struct AuthResponse {
 	access_token: String,
 	//token_type: CompactString,
-	refresh_token: String,
+	refresh_token: String
 	//expires_in: u32,
 	//scope: CompactString,
 	//enl_uid: CompactString,
@@ -170,8 +165,10 @@ pub struct Tokens {
 
 #[cfg(test)]
 mod test {
-	use chrono::NaiveDate;
 	use std::env;
+
+	use chrono::NaiveDate;
+
 	use super::*;
 
 	#[allow(dead_code)]
@@ -181,7 +178,9 @@ mod test {
 			env::var("ENPHASE_CLIENT_ID").unwrap(),
 			env::var("ENPHASE_CLIENT_SECRET").unwrap(),
 			&env::var("ENPHASE_OAUTH_CODE").unwrap()
-		).await.unwrap()
+		)
+		.await
+		.unwrap()
 	}
 
 	#[allow(dead_code)]
@@ -259,4 +258,3 @@ mod test {
 		system.get_microinverter_production(&NaiveDate::from_ymd_opt(2021, 12, 25).unwrap(), None).await.unwrap();
 	}
 }
-

@@ -81,51 +81,54 @@ pub struct WiFiInterface {
 #[cfg(test)]
 mod tests {
 	use chrono::TimeZone;
+
 	use super::*;
 
 	#[test]
 	fn test_deserialize_home() {
 		let s = include_str!("home/testdata/home.json");
 		let home: Home = serde_json::from_str(s).unwrap();
-		assert_eq!(home, Home{
-			software_build_epoch: Utc.timestamp_opt(1584607493, 0).unwrap(),
-			is_nonvoy: false,
-			db_size: "43 MB".into(),
-			db_percent_full: 11,
-			timezone: "US/Eastern".into(),
-			current_date: "12/12/2022".into(),
-			current_time: "14:36".into(),
-			network: Network{
-				web_comm: true,
-				ever_reported_to_enlighten: true,
-				last_enlighten_report_time: Utc.timestamp_opt(1670873269, 0).unwrap(),
-				primary_interface: "none".into(),
-				interfaces: vec![
-					Interface::Wired(WiredInterface{
-						interface: "eth0".into(),
-						mac: MacAddr6::new(0x00, 0x1d, 0xc0, 0x6d, 0x32, 0xc6),
-						dhcp: true,
-						ip: IpAddr::from([169, 254, 120, 1]),
-						carrier: false
-					}),
-					Interface::WiFi(WiFiInterface{
-						interface: "wlan0".into(),
-						signal_strength: 3,
-						signal_strength_max: 5,
-						mac: MacAddr6::new(0x38, 0x81, 0xd7, 0x35, 0x9b, 0xd2),
-						dhcp: true,
-						ip: IpAddr::from([192, 168, 1, 80]),
-						carrier: true,
-						supported: true,
-						present: true,
-						configured: true,
-						status: "connected".into()
-					})
-				],
-			},
-			tariff: "none".into(),
-			update_status: "satisfied".into()
-		});
+		assert_eq!(
+			home,
+			Home {
+				software_build_epoch: Utc.timestamp_opt(1584607493, 0).unwrap(),
+				is_nonvoy: false,
+				db_size: "43 MB".into(),
+				db_percent_full: 11,
+				timezone: "US/Eastern".into(),
+				current_date: "12/12/2022".into(),
+				current_time: "14:36".into(),
+				network: Network {
+					web_comm: true,
+					ever_reported_to_enlighten: true,
+					last_enlighten_report_time: Utc.timestamp_opt(1670873269, 0).unwrap(),
+					primary_interface: "none".into(),
+					interfaces: vec![
+						Interface::Wired(WiredInterface {
+							interface: "eth0".into(),
+							mac: MacAddr6::new(0x00, 0x1d, 0xc0, 0x6d, 0x32, 0xc6),
+							dhcp: true,
+							ip: IpAddr::from([169, 254, 120, 1]),
+							carrier: false
+						}),
+						Interface::WiFi(WiFiInterface {
+							interface: "wlan0".into(),
+							signal_strength: 3,
+							signal_strength_max: 5,
+							mac: MacAddr6::new(0x38, 0x81, 0xd7, 0x35, 0x9b, 0xd2),
+							dhcp: true,
+							ip: IpAddr::from([192, 168, 1, 80]),
+							carrier: true,
+							supported: true,
+							present: true,
+							configured: true,
+							status: "connected".into()
+						})
+					]
+				},
+				tariff: "none".into(),
+				update_status: "satisfied".into()
+			}
+		);
 	}
 }
-

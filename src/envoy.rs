@@ -50,10 +50,10 @@ pub enum InfoError {
 impl Client {
 	pub fn new(base_url: impl AsRef<str>, username: impl AsRef<str>, password: impl AsRef<str>) -> Result<Self, url::ParseError> {
 		let mut base_url = base_url.as_ref().to_owned();
-		if(!base_url.ends_with('/')) {
+		if (!base_url.ends_with('/')) {
 			base_url.push('/');
 		}
-		Ok(Self{
+		Ok(Self {
 			base_url: Url::parse(&base_url)?,
 			client: reqwest::Client::new(),
 			username: username.as_ref().into(),
@@ -84,13 +84,7 @@ impl Client {
 
 	pub async fn inverters(&self) -> Result<Vec<Inverter>, diqwest::error::Error> {
 		let url = self.base_url.join("api/v1/production/inverters").unwrap();
-		let response = self.client
-			.get(url)
-			.send_with_digest_auth(&self.username, &self.password)
-			.await?
-			.error_for_status()?
-			.json()
-			.await?;
+		let response = self.client.get(url).send_with_digest_auth(&self.username, &self.password).await?.error_for_status()?.json().await?;
 		Ok(response)
 	}
 
@@ -105,11 +99,7 @@ mod test {
 	use super::*;
 
 	fn client() -> Client {
-		Client::new(
-			std::env::var("ENVOY_URL").unwrap(),
-			std::env::var("ENVOY_USERNAME").unwrap_or("".into()),
-			std::env::var("ENVOY_PASSWORD").unwrap_or("".into())
-		).unwrap()
+		Client::new(std::env::var("ENVOY_URL").unwrap(), std::env::var("ENVOY_USERNAME").unwrap_or("".into()), std::env::var("ENVOY_PASSWORD").unwrap_or("".into())).unwrap()
 	}
 
 	#[tokio::test]
@@ -147,4 +137,3 @@ mod test {
 		client.production().await.unwrap();
 	}
 }
-

@@ -5,4 +5,3 @@ mod model;
 pub use model::AggregateProduction;
 
 pub(crate) const DATE_FORMAT: &str = "%Y-%m-%d";
-

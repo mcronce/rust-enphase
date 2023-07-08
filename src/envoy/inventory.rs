@@ -37,11 +37,7 @@ impl<'de> Deserialize<'de> for Inventory {
 		let pcu = pcu.ok_or_else(|| serde::de::Error::custom("Missing 'PCU' inventory section"))?;
 		let acb = acb.ok_or_else(|| serde::de::Error::custom("Missing 'ACB' inventory section"))?;
 		let nsrb = nsrb.ok_or_else(|| serde::de::Error::custom("Missing 'NSRB' inventory section"))?;
-		Ok(Self{
-			pcu,
-			acb,
-			nsrb
-		})
+		Ok(Self { pcu, acb, nsrb })
 	}
 }
 
@@ -103,31 +99,35 @@ pub struct Device {
 mod tests {
 	use chrono::TimeZone;
 	use smallvec::smallvec;
+
 	use super::*;
 
 	#[test]
 	fn test_deserialize_single_device() {
 		let s = include_str!("inventory/testdata/single-device.json");
 		let device: Device = serde_json::from_str(s).unwrap();
-		assert_eq!(device, Device{
-			part_num: "800-00661-r08".into(),
-			installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
-			serial_num: "121816047176".into(),
-			device_status: smallvec![DeviceStatus::Ok],
-			last_rpt_date: Utc.timestamp_opt(1670868959, 0).unwrap(),
-			admin_state: 1,
-			dev_type: 1,
-			created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
-			img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
-			img_pnum_running: "520-00071-r01-v02.14.02".into(),
-			ptpn: "540-00131-r01-v02.14.04".into(),
-			chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
-			device_control: smallvec![DeviceControl{gficlearset: false}],
-			producing: true,
-			communicating: true,
-			provisioned: true,
-			operating: false
-		});
+		assert_eq!(
+			device,
+			Device {
+				part_num: "800-00661-r08".into(),
+				installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
+				serial_num: "121816047176".into(),
+				device_status: smallvec![DeviceStatus::Ok],
+				last_rpt_date: Utc.timestamp_opt(1670868959, 0).unwrap(),
+				admin_state: 1,
+				dev_type: 1,
+				created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
+				img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
+				img_pnum_running: "520-00071-r01-v02.14.02".into(),
+				ptpn: "540-00131-r01-v02.14.04".into(),
+				chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
+				device_control: smallvec![DeviceControl { gficlearset: false }],
+				producing: true,
+				communicating: true,
+				provisioned: true,
+				operating: false
+			}
+		);
 	}
 
 	#[test]
@@ -136,25 +136,28 @@ mod tests {
 		let inventory: Inventory = serde_json::from_str(s).unwrap();
 		assert_eq!(inventory.acb, vec![]);
 		assert_eq!(inventory.nsrb, vec![]);
-		assert_eq!(inventory.pcu[0], Device{
-			part_num: "800-00661-r08".into(),
-			installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
-			serial_num: "121816047176".into(),
-			device_status: smallvec![DeviceStatus::Ok],
-			last_rpt_date: Utc.timestamp_opt(1670868959, 0).unwrap(),
-			admin_state: 1,
-			dev_type: 1,
-			created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
-			img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
-			img_pnum_running: "520-00071-r01-v02.14.02".into(),
-			ptpn: "540-00131-r01-v02.14.04".into(),
-			chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
-			device_control: smallvec![DeviceControl{gficlearset: false}],
-			producing: true,
-			communicating: true,
-			provisioned: true,
-			operating: false
-		});
+		assert_eq!(
+			inventory.pcu[0],
+			Device {
+				part_num: "800-00661-r08".into(),
+				installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
+				serial_num: "121816047176".into(),
+				device_status: smallvec![DeviceStatus::Ok],
+				last_rpt_date: Utc.timestamp_opt(1670868959, 0).unwrap(),
+				admin_state: 1,
+				dev_type: 1,
+				created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
+				img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
+				img_pnum_running: "520-00071-r01-v02.14.02".into(),
+				ptpn: "540-00131-r01-v02.14.04".into(),
+				chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
+				device_control: smallvec![DeviceControl { gficlearset: false }],
+				producing: true,
+				communicating: true,
+				provisioned: true,
+				operating: false
+			}
+		);
 	}
 
 	#[test]
@@ -163,25 +166,27 @@ mod tests {
 		let inventory: Inventory = serde_json::from_str(s).unwrap();
 		assert_eq!(inventory.acb, vec![]);
 		assert_eq!(inventory.nsrb, vec![]);
-		assert_eq!(inventory.pcu[0], Device{
-			part_num: "800-00661-r08".into(),
-			installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
-			serial_num: "121816047176".into(),
-			device_status: smallvec![DeviceStatus::DcPowerLow, DeviceStatus::Failure],
-			last_rpt_date: Utc.timestamp_opt(1671053563, 0).unwrap(),
-			admin_state: 1,
-			dev_type: 1,
-			created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
-			img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
-			img_pnum_running: "520-00071-r01-v02.14.02".into(),
-			ptpn: "540-00131-r01-v02.14.04".into(),
-			chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
-			device_control: smallvec![DeviceControl{gficlearset: false}],
-			producing: false,
-			communicating: false,
-			provisioned: false,
-			operating: false
-		});
+		assert_eq!(
+			inventory.pcu[0],
+			Device {
+				part_num: "800-00661-r08".into(),
+				installed: Utc.timestamp_opt(1571245440, 0).unwrap(),
+				serial_num: "121816047176".into(),
+				device_status: smallvec![DeviceStatus::DcPowerLow, DeviceStatus::Failure],
+				last_rpt_date: Utc.timestamp_opt(1671053563, 0).unwrap(),
+				admin_state: 1,
+				dev_type: 1,
+				created_date: Utc.timestamp_opt(1571245440, 0).unwrap(),
+				img_load_date: Utc.timestamp_opt(1575566582, 0).unwrap(),
+				img_pnum_running: "520-00071-r01-v02.14.02".into(),
+				ptpn: "540-00131-r01-v02.14.04".into(),
+				chaneid: Utc.timestamp_opt(1627390225, 0).unwrap(),
+				device_control: smallvec![DeviceControl { gficlearset: false }],
+				producing: false,
+				communicating: false,
+				provisioned: false,
+				operating: false
+			}
+		);
 	}
 }
-

@@ -24,6 +24,7 @@ impl fmt::Display for Granularity {
 
 impl FromStr for Granularity {
 	type Err = InvalidGranularity;
+
 	#[inline]
 	fn from_str(s: &str) -> Result<Self, Self::Err> {
 		match s {
@@ -38,4 +39,3 @@ impl FromStr for Granularity {
 #[derive(Debug, thiserror::Error)]
 #[error("Invalid granularity \"{0}\"")]
 pub struct InvalidGranularity(String);
-

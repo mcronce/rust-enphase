@@ -21,7 +21,7 @@ pub(super) enum ProductionCategory {
 pub(super) struct Detail {
 	pub(super) measurement_type: MeasurementType,
 	#[serde(flatten)]
-	pub(super) inner: super::Detail,
+	pub(super) inner: super::Detail
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Display, EnumString, DeserializeFromStr)]
@@ -33,4 +33,3 @@ pub(super) enum MeasurementType {
 	#[strum(serialize = "net-consumption")]
 	NetConsumption
 }
-

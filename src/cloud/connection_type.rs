@@ -10,6 +10,7 @@ pub enum ConnectionType {
 
 impl FromStr for ConnectionType {
 	type Err = InvalidConnectionType;
+
 	#[inline]
 	fn from_str(s: &str) -> Result<Self, Self::Err> {
 		match s {
@@ -23,4 +24,3 @@ impl FromStr for ConnectionType {
 #[derive(Debug, thiserror::Error)]
 #[error("Invalid connection type \"{0}\"")]
 pub struct InvalidConnectionType(String);
-

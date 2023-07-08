@@ -15,9 +15,9 @@ use serde_with::serde_as;
 use serde_with::TimestampSeconds;
 use tokio::sync::Mutex;
 
-use crate::DATE_FORMAT;
 use super::ConnectionType;
 use super::Granularity;
+use crate::DATE_FORMAT;
 
 #[derive(Clone, Debug)]
 pub struct System {
@@ -64,10 +64,11 @@ impl System {
 		if let Some(date) = end_date {
 			args.push(Cow::Owned(format!("end_date={}", date.format(DATE_FORMAT))));
 		}
-		if(include_split_meter_and_microinverters) {
+		if (include_split_meter_and_microinverters) {
 			args.push(Cow::Borrowed("production=all"));
 		}
-		let response: LifetimeProductionResponse = self.client
+		let response: LifetimeProductionResponse = self
+			.client
 			.get(format!("https://api.enphaseenergy.com/api/v4/systems/{}/energy_lifetime?{}", self.system_id, args.join("&")))
 			.header("Authorization", &*self.auth_header.lock().await)
 			.send()
@@ -95,7 +96,8 @@ impl System {
 		if let Some(granularity) = granularity {
 			args.push(Cow::Owned(format!("granularity={granularity}")));
 		}
-		let response: MicroinverterProductionResponse = self.client
+		let response: MicroinverterProductionResponse = self
+			.client
 			.get(format!("https://api.enphaseenergy.com/api/v4/systems/{}/telemetry/production_micro?{}", self.system_id, args.join("&")))
 			.header("Authorization", &*self.auth_header.lock().await)
 			.send()
@@ -110,7 +112,7 @@ impl System {
 impl From<(reqwest::Client, ArcStr, Arc<Mutex<String>>, SystemResponse)> for System {
 	#[inline]
 	fn from(input: (reqwest::Client, ArcStr, Arc<Mutex<String>>, SystemResponse)) -> Self {
-		Self{
+		Self {
 			client: input.0,
 			api_key_qstr: input.1,
 			auth_header: input.2,
@@ -168,7 +170,7 @@ pub(crate) struct ListSystemsResponse {
 pub(crate) struct LifetimeProductionResponse {
 	//system_id: u32,
 	start_date: NaiveDate,
-	production: Vec<u32>,
+	production: Vec<u32>
 	//meta: Metadata
 }
 
@@ -182,7 +184,7 @@ pub(crate) struct MicroinverterProductionResponse {
 	//#[serde(with = "time::serde::iso8601")]
 	//end_date: DateTime<Utc>,
 	//items: CompactString,
-	intervals: Vec<MicroinverterProduction>,
+	intervals: Vec<MicroinverterProduction>
 	//meta: Metadata
 }
 
@@ -240,4 +242,3 @@ pub struct Address {
 	pub state: CompactString,
 	pub postal_code: CompactString
 }
-
