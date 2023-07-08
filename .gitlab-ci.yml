@@ -27,7 +27,7 @@ default:
 
 Build and test Rust code:
   stage: build
-  image: mcronce/rust-pgo:1.66
+  image: mcronce/rust-pgo:1.70
   cache:
     - key: rust
       paths:
@@ -41,7 +41,7 @@ Build and test Rust code:
 
 cargo publish --dry-run:
   stage: deploy-dryrun
-  image: mcronce/rust-pgo:1.66
+  image: mcronce/rust-pgo:1.70
   cache:
     - key: rust
       policy: pull
@@ -52,7 +52,7 @@ cargo publish --dry-run:
 
 cargo publish:
   stage: deploy
-  image: mcronce/rust-pgo:1.66
+  image: mcronce/rust-pgo:1.70
   cache:
     - key: rust
       policy: pull
